@@ -1,1 +1,6 @@
-guard 'cedar'
+# :project_path => 'YourProject.xcodeproject'
+# :target => 'YourSpecs'
+guard 'cedar' do
+  # watch(%r{^YourSpecs/.+Spec\.mm$})
+  # watch(%r{^YourProject/.+(\.m|\.h)$})
+end
