@@ -1,4 +1,8 @@
 source "https://rubygems.org"
 
-gem "rb-fsevent"
 gemspec
+
+group :development, :test do
+  gem "gem-release"
+  gem "rb-fsevent"
+end
