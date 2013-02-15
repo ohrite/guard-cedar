@@ -10,8 +10,9 @@ Gem::Specification.new do |s|
   s.summary  = "Guard gem for Cedar."
   s.description = "Guard::Cedar automatically runs your Cedar suite."
 
+  s.add_dependency "guard"
+
   s.add_development_dependency "rspec"
-  s.add_development_dependency "guard"
   s.add_development_dependency "guard-rspec"
   s.add_development_dependency "guard-bundler"
 
