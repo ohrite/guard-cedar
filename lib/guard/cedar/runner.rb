@@ -10,11 +10,23 @@ module Guard
       end
 
       def configuration
-        !!options[:release] ? "Release" : "Debug"
+        options[:configuration] || "Debug"
       end
 
       def sdk_version
         options[:sdk_version] || "6.1"
+      end
+
+      def environment_options
+        options[:env] || {}
+      end
+
+      def target
+        options[:target]
+      end
+
+      def project_path
+        options[:project_path]
       end
 
       def run
@@ -38,10 +50,6 @@ module Guard
       end
 
       private
-      def environment_options
-        options[:env] || {}
-      end
-
       def cedar_environment
         environment_options.merge({
           "DYLD_ROOT_PATH" => simulator_path,
@@ -60,7 +68,7 @@ module Guard
       end
 
       def cedar_app_path
-        File.expand_path("#{options[:target]}.app/#{options[:target]}", configuration_path)
+        File.expand_path("#{target}.app/#{target}", configuration_path)
       end
 
       def configuration_path
@@ -68,14 +76,14 @@ module Guard
       end
 
       def build_path
-        File.expand_path("../build", options[:project_path])
+        File.expand_path("../build", project_path)
       end
 
       def compile_command
         [
           xcodebuild_path,
-          "-project #{options[:project_path]}",
-          "-target #{options[:target]}",
+          "-project #{project_path}",
+          "-target #{target}",
           "-configuration #{configuration}",
           "-sdk iphonesimulator",
           "build"

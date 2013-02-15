@@ -14,8 +14,8 @@ describe Guard::Cedar::Runner do
       runner.configuration.should == "Debug"
     end
 
-    context "when the release option is set" do
-      before { options[:release] = true }
+    context "when the configuration option is set" do
+      before { options[:configuration] = "Release" }
 
       it "returns Release" do
         runner.configuration.should == "Release"
