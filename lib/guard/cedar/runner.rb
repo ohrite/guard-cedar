@@ -25,7 +25,6 @@ module Guard
       def compile
         system(
           compile_command,
-          :unsetenv_others => true,
           :out => "/dev/null",
           :err => "/dev/null"
         )
@@ -35,9 +34,7 @@ module Guard
         system(
           cedar_environment,
           execute_command,
-          :unsetenv_others => true,
-          :out => "/dev/null",
-          :err => "/dev/null"
+          :unsetenv_others => true
         )
       end
 
