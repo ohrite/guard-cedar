@@ -1,3 +1,4 @@
+script: script/ci.sh
 rvm:
   - 1.9.3
   - 2.0.0
