@@ -1,6 +1,6 @@
-# :project_path => 'YourProject.xcodeproject'
-# :target => 'YourSpecs'
-guard 'cedar' do
+# Set :project_path to the location of your XCode project file
+# Set :target to the name of the Cedar build target
+guard 'cedar', :project_path => 'YourProject.xcodeproj', :target => 'YourSpecs' do
   # watch(%r{^YourSpecs/.+Spec\.mm$})
   # watch(%r{^YourProject/.+(\.m|\.h)$})
 end
