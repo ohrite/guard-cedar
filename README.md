@@ -56,14 +56,6 @@ guard 'cedar', :sdk_version => '7.0' do
 end
 ```
 
-Guard::Cedar can build against another version of the iOS SDK if you set the :sdk_version option:
-
-``` ruby
-guard 'cedar', :sdk_version => '7.0' do
-  # ...
-end
-```
-
 If you want to set an environment variable, you can configure :env option with a hash:
 
 ``` ruby
