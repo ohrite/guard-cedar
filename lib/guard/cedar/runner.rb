@@ -25,8 +25,7 @@ module Guard
       def compile
         system(
           compile_command,
-          :out => "/dev/null",
-          :err => "/dev/null"
+          :out => "/dev/null"
         )
       end
 
