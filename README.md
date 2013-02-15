@@ -1,4 +1,4 @@
-# Guard::Cedar [![Build Status](https://secure.travis-ci.org/ohrite/guard-cedar.png)](http://travis-ci.org/ohrite/guard-cedar)[![Dependency Status](https://gemnasium.com/ohrite/guard-cedar.png)](https://gemnasium.com/ohrite/guard-cedar)[![Code Climate](https://codeclimate.com/github/ohrite/guard-cedar.png)](https://codeclimate.com/github/ohrite/guard-cedar)
+# Guard::Cedar [![Build Status](https://secure.travis-ci.org/ohrite/guard-cedar.png)](http://travis-ci.org/ohrite/guard-cedar) [![Dependency Status](https://gemnasium.com/ohrite/guard-cedar.png)](https://gemnasium.com/ohrite/guard-cedar) [![Code Climate](https://codeclimate.com/github/ohrite/guard-cedar.png)](https://codeclimate.com/github/ohrite/guard-cedar)
 
 guard-cedar automatically recompiles your source and launches the Cedar spec runner application when files are modified.
 
