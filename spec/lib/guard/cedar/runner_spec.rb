@@ -97,5 +97,28 @@ describe Guard::Cedar::Runner do
       end
       runner.execute
     end
+
+    context "with user-provided environment variables" do
+      before do
+        options[:env] = {
+          "PANTS" => "meh",
+          "CFFIXED_USER_HOME" => "/etc"
+        }
+      end
+
+      it "passes environment variables through" do
+        runner.should_receive(:system).with do |env, command, options|
+          env["PANTS"].should == "meh"
+        end
+        runner.execute
+      end
+
+      it "does not trample important settings" do
+        runner.should_receive(:system).with do |env, command, options|
+          env["CFFIXED_USER_HOME"].should == Dir.tmpdir
+        end
+        runner.execute
+      end
+    end
   end
 end

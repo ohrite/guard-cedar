@@ -38,14 +38,18 @@ module Guard
       end
 
       private
+      def environment_options
+        options[:env] || {}
+      end
+
       def cedar_environment
-        {
+        environment_options.merge({
           "DYLD_ROOT_PATH" => simulator_path,
           "CFFIXED_USER_HOME" => Dir.tmpdir,
           "CEDAR_HEADLESS_SPECS" => "1",
           "CEDAR_REPORTER_CLASS" => "CDRColorizedReporter",
           "IPHONE_SIMULATOR_ROOT" => simulator_path
-        }
+        })
       end
 
       def execute_command
