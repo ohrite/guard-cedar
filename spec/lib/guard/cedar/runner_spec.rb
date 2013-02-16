@@ -9,6 +9,13 @@ describe Guard::Cedar::Runner do
   end
   let(:runner) { Guard::Cedar::Runner.new(options) }
 
+  before do
+    runner.stub(
+      :xcodebuild_path => "/opt/pants/xcodebuild",
+      :xcode_developer_path => "/Socks/XCode.app"
+    )
+  end
+
   describe "#configuration" do
     it "returns Debug by default" do
       runner.configuration.should == "Debug"
